@@ -1,0 +1,4 @@
+# List of source AWS files
+file1.txt
+file2.txt
+...
