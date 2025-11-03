@@ -1,1 +1,5 @@
-{"key": "value"}
+{
+  "oci_access_key": "OCI_ACCESS_KEY_ID",
+  "oci_secret_key": "OCI_SECRET_ACCESS_KEY",
+  "endpoint": "https://fr9qm01aaaa.compat.objectstorage.eu-frankfurt-1.oraclecloud.com/mybucket/backup.db"
+}
