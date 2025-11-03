@@ -1,6 +1,6 @@
 # AWS to OCI S3 Compatibility Conversion Toolkit
 
-This toolkit automates the conversion of source files that use AWS S3 APIs, credentials, hostnames, and access logic into Oracle Cloud Infrastructure (OCI) compatible equivalents.
+This toolkit automates the conversion of source files in batch mode that use AWS S3 APIs, credentials, hostnames, and access logic into Oracle Cloud Infrastructure (OCI) compatible equivalents.
 
 ## Purpose
 
@@ -25,7 +25,7 @@ Many applications and scripts are written to work with Amazon S3. OCI offers an 
 - `aws2oci_api_adapt.py` — The main conversion script
 - `source_aws_files.txt` — A list of file paths to process
 - Transformed files will be written to the same directory with `_OCI` suffix before the extension
-- `oci_file_validators.py` — Set of filetype-specific validation checks
+- Set of filetype-specific validation checks in the logic.
 
 ## Usage
 
@@ -50,7 +50,7 @@ python3 aws2oci_api_adapt.py -l source_aws_files.txt
 ## Limitations
 
 - Transformation logic expects conventional code structure
-- Complex obfuscation or AWS logic wrapped in dynamic structures may require manual review
+- Complex obfuscation or AWS logic wrapped in dynamic or nested structures may require manual review.
 
 ## Example
 
