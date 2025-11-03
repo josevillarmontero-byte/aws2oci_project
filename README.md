@@ -4,7 +4,7 @@ This toolkit automates the conversion of source files in batch mode that use AWS
 
 ## Purpose
 
-Many applications and scripts are written to work with Amazon S3. OCI offers an S3-compatible Object Storage API, but direct reuse is limited due to differences in endpoints, authentication, headers, and tooling. This tool performs automated transformations to support OCI compatibility.
+Many applications and scripts are written to work with Amazon S3. OCI offers an S3-compatible Object Storage API, but direct reuse is limited due to differences in endpoints, authentication, headers, and tooling. This tool performs automated transformations to support OCI compatibility. It can be easily be extended to support other formats, with the same logic. 
 
 ## Features
 
@@ -35,7 +35,8 @@ python3 aws2oci_api_adapt.py -l source_aws_files.txt
 
 - Make sure to replace the hardcoded constants at the top of the script with your actual OCI credentials and region
 - Your `source_aws_files.txt` should list one file per line (e.g., `myapp/upload.js`)
-
+- Make sure to replace the hardcoded 'sample' identity constants declared at the beginning of the script with your own identity and signing values.
+  
 ## Output
 
 - Each file is converted and validated
@@ -49,8 +50,9 @@ python3 aws2oci_api_adapt.py -l source_aws_files.txt
 
 ## Limitations
 
-- Transformation logic expects conventional code structure
+- Transformation logic expects a conventional code structure
 - Complex obfuscation or AWS logic wrapped in dynamic or nested structures may require manual review.
+- JavaScript, Python, and other adaptations may require the usage of client-side OCI SDK, as they originally were intended to be used with AWS SDK. Others may require external signers. For those SDK cases, it may surely require config files for the OCI SDK for correct configuration. Those config files will contain ID and values that need to be replicated in the mentioned header of the script aws2oci_api_adapt.py. Those are independent values that won't interfere with their respective operations. In other words, if there are any wrongly set values in any of these cases, The SDK or this script won't perform as expected, but they have no dependency on each other.
 
 ## Example
 
