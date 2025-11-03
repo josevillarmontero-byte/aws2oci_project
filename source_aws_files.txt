@@ -1,4 +1,26 @@
-# List of source AWS files
-file1.txt
-file2.txt
-...
+# =======================================================================
+# source_aws_files.txt
+# -----------------------------------------------------------------------
+# This file lists all source files that contain AWS S3 API calls.
+# The script aws2oci_api_adapt.py will process each file in this list,
+# rewrite its S3 calls for OCI compatibility, and create a new file
+# with "_OCI" appended before the extension.
+#
+# Lines starting with "#" are comments and will be ignored.
+# Blank lines are ignored as well.
+# Each file path is relative to where you run the script, or you can use absolute paths.
+# The script will create for example:
+#   backend/api/s3_upload_handler_OCI.py
+#   node_services/uploader_service_OCI.js
+#   scripts/backup_to_s3_OCI.sh
+# and so on, maintaining directory structure.
+# Non-Python files (e.g., .js, .html, .sh, .tf) are processed textually — URL and header rewrites still apply — but AST syntax checking will only work for .py files.
+# =======================================================================
+
+backend/api/s3_upload_handler.py
+node_services/uploader_service.js
+scripts/backup_to_s3.sh
+other_format/config.json
+other_format/config.yaml
+other_format/index.html
+other_format/storage.tf
