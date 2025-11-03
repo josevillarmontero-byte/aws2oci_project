@@ -1,7 +1,3 @@
-# AWS to OCI S3 Conversion Toolkit
-
-This project provides a toolkit for converting AWS S3 resources to OCI equivalent.
-
 # AWS to OCI S3 Compatibility Conversion Toolkit
 
 This toolkit automates the conversion of source files that use AWS S3 APIs, credentials, hostnames, and access logic into Oracle Cloud Infrastructure (OCI) compatible equivalents.
